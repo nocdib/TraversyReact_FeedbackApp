@@ -1,24 +1,15 @@
-import React from 'react'
-import { useState } from 'react'
 
-function FeedbackItem() {
+import {FaTimes} from 'react-icons/fa'
+import Card from './shared/Card'
 
-    const [rating, setRating] = useState(7)
-
-    const handleClick = () => {
-        setRating((prev) => {
-            console.log(prev)
-            return prev + 1
-        })
-
-    }
+function FeedbackItem({item}) { // item is not destructured here. This is the full item object.
 
   return (
-    <div className='card'>
-        <div className="num-display">{rating}</div>
-        <div className="text-display">This is an example of a feedback item.</div>
-        <button onClick={handleClick}>Click</button>
-    </div>
+    <Card>
+        <div className="num-display">{item.rating}</div>
+        <button className='close'><FaTimes color='purple'/></button>
+        <div className="text-display">{item.text}</div>
+    </Card>
   )
 }
 

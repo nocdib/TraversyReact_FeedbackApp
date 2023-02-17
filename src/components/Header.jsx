@@ -1,5 +1,3 @@
-import React from 'react'
-
 function Header(props) {
 
     //style this component using the default properties below
